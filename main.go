@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"mageBATestCase/routes"
+	"mageBATestCase/util"
+)
 
 func main() {
-	fmt.Println("Hello, world.")
+	router := routes.InitRoute()
+	port := util.GetEnvVariable("SERVER_PORT")
+	router.Run(port)
 }

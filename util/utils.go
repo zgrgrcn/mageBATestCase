@@ -18,6 +18,9 @@ func GetEnvVariable(variable string) string {
 	if getenv == "" {
 		initEnv()
 		getenv = os.Getenv(variable)
+		if getenv == "" {
+			log.Fatal("Environment variable not found")
+		}
 	}
 	return getenv
 }
