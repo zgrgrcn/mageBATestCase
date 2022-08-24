@@ -33,7 +33,7 @@ func setAuthRoute(router *gin.Engine) {
 	v1.POST(util.PathUser+util.PathRegister, new(controller.UserController).Register)
 	v1.POST(util.PathUser+util.PathLogin, new(controller.UserController).Login)
 
-	authGroup := router.Group(util.GetEnvVariable("BASE_PATH"))
+	authGroup := router.Group(docs.SwaggerInfo.BasePath)
 	authGroup.Use(middleware.Authentication())
 	//authGroup.GET("/profile", userController.Endgame)
 	authGroup.POST(util.PathEndgame, new(controller.EndGameController).Endgame)

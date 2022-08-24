@@ -25,9 +25,3 @@ func TestSERVER_PORT(t *testing.T) {
 		t.Error("Expected PORT but got ", val)
 	}
 }
-func TestBASE_PATH(t *testing.T) {
-	val := GetEnvVariable("BASE_PATH")
-	if val != "api/v1" {
-		t.Error("Expected BASE_PATH but got ", val)
-	}
-}

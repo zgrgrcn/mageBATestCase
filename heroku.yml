@@ -1,5 +1,0 @@
-build:
-  language:
-    - go
-  run:
-    web: mageBATestCase
