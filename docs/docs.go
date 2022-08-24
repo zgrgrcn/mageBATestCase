@@ -12,7 +12,7 @@ const docTemplate = `{
         "title": "{{.Title}}",
         "contact": {
             "name": "Ozgur Gurcan",
-            "email": "zgurgurcan1996@gmail.com"
+            "email": "ozgurgurcan1996@gmail.com"
         },
         "version": "{{.Version}}"
     },
@@ -196,12 +196,6 @@ const docTemplate = `{
                     },
                     "400": {
                         "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/dto.Response"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
                         "schema": {
                             "$ref": "#/definitions/dto.Response"
                         }

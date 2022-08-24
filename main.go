@@ -24,7 +24,7 @@ func main() {
 	docs.SwaggerInfo.Version = "1.0"
 	docs.SwaggerInfo.Host = "shielded-springs-54397.herokuapp.com"
 	docs.SwaggerInfo.BasePath = "/api/v1"
-	docs.SwaggerInfo.Schemes = []string{"http", "https"}
+	docs.SwaggerInfo.Schemes = []string{"https"}
 	docs.SwaggerInfo.Title = "Mage BA Test Case API"
 	docs.SwaggerInfo.Description = "This is a test case for Mage BA position."
 

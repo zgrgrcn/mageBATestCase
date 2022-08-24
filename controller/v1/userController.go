@@ -23,7 +23,6 @@ type UserController struct{}
 // @Param UserRequest body dto.UserRequest true "username and password"
 // @Success 200 {object} dto.ApiResponse
 // @Failure 400 {object} dto.Response
-// @Failure 500 {object} dto.Response
 // @Router /user/register [post]
 func (controller *UserController) Register(c *gin.Context) {
 	var userRequest dto.UserRequest
@@ -35,7 +34,7 @@ func (controller *UserController) Register(c *gin.Context) {
 	}
 	dbUser, err := service.UserService{}.Create(&userRequest)
 	if err != nil {
-		c.AbortWithStatusJSON(http.StatusInternalServerError, dto.Response{Message: err.Error()})
+		c.AbortWithStatusJSON(http.StatusBadRequest, dto.Response{Message: err.Error()})
 	} else {
 		c.JSON(http.StatusOK, dto.ApiResponse{
 			Status:    "200",
@@ -75,7 +74,7 @@ func (controller *UserController) Login(c *gin.Context) {
 	userservice := service.UserService{}
 	dbUser, err := userservice.Find(&loginInfo)
 	if err != nil {
-		c.AbortWithStatusJSON(http.StatusNotFound, dto.Response{Message: err.Error()})
+		c.AbortWithStatusJSON(http.StatusUnauthorized, dto.Response{Message: err.Error()})
 		return
 	}
 
