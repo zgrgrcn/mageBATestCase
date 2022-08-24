@@ -3,6 +3,8 @@ package routes
 import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	swaggerfiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 	controller "mageBATestCase/controller/v1"
 	"mageBATestCase/docs"
 	"mageBATestCase/middleware"
@@ -21,7 +23,7 @@ func InitRoute() *gin.Engine {
 	router.Use(middleware.ErrorHandler)
 	router.NoRoute(noRouteHandler())
 	router.SetTrustedProxies(nil)
-	//router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 	setAuthRoute(router)
 	return router
 }
