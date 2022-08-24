@@ -30,6 +30,6 @@ func main() {
 
 	router := routes.InitRoute()
 
-	port := util.GetEnvVariable("SERVER_PORT")
+	port := util.GetEnvVariable("PORT")
 	router.Run(port)
 }

@@ -14,15 +14,15 @@ func TestGetEnvVariable(t *testing.T) {
 }
 
 func TestATLAS_URI(t *testing.T) {
-	val := GetEnvVariable("ATLAS_URI")
+	val := GetEnvVariable("DATABASE_URL")
 	if val == "" {
-		t.Error("Expected ATLAS_URI")
+		t.Error("Expected DATABASE_URL")
 	}
 }
 func TestSERVER_PORT(t *testing.T) {
-	val := GetEnvVariable("SERVER_PORT")
+	val := GetEnvVariable("PORT")
 	if val != ":5050" {
-		t.Error("Expected SERVER_PORT but got ", val)
+		t.Error("Expected PORT but got ", val)
 	}
 }
 func TestBASE_PATH(t *testing.T) {
