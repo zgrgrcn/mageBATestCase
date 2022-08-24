@@ -3,7 +3,6 @@ package main
 import (
 	"mageBATestCase/docs"
 	"mageBATestCase/routes"
-	"mageBATestCase/util"
 )
 
 // @title  Mage BA Test Case API
@@ -30,6 +29,6 @@ func main() {
 
 	router := routes.InitRoute()
 
-	port := util.GetEnvVariable("PORT")
-	router.Run(port)
+	//port := util.GetEnvVariable("PORT")
+	router.Run("5050")
 }
