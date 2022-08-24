@@ -31,7 +31,7 @@ definitions:
     - score
     - userID
     type: object
-host: localhost:8080
+host: https://shielded-springs-54397.herokuapp.com/
 info:
   contact:
     email: zgurgurcan1996@gmail.com

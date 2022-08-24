@@ -19,7 +19,7 @@ PORT=:8080
 ```bash
 go run main.go
 ```
-The default port is 8080 go to http://localhost:8080/swagger/index.html to see swagger ui.
+The default port is 8080 go to http://localhost:8080/swagger/index.html or https://shielded-springs-54397.herokuapp.com/swagger/index.html to see swagger ui.
 #### For /user endpoint you don't need to add any token, but for /leaderboard and /endgame endpoints you need to add a token to the header as Bearer. You can get token from /user/login endpoint.
 
 

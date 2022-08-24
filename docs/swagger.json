@@ -9,7 +9,7 @@
         },
         "version": "1.0"
     },
-    "host": "localhost:8080",
+    "host": "https://shielded-springs-54397.herokuapp.com/",
     "basePath": "/api/v1",
     "paths": {
         "/endgame": {

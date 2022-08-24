@@ -50,7 +50,7 @@ func noRouteHandler() gin.HandlerFunc {
 			Result: gin.H{
 				"endpoint": c.Request.URL.String(),
 				"method":   c.Request.Method,
-				"hint":     "You entered an invalid Page/Endpoint, visit http://localhost:8080/swagger/index.html to see the available routes",
+				"hint":     "You entered an invalid Page/Endpoint, visit http://localhost:8080/swagger/index.html or https://shielded-springs-54397.herokuapp.com/swagger/index.html to see the available routes",
 			}}
 		c.JSON(http.StatusNotImplemented, responseModel)
 	}
