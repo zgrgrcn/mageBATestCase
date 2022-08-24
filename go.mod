@@ -1,6 +1,6 @@
 module mageBATestCase
 
-go 1.15
+go 1.18
 
 require (
 	github.com/gin-contrib/cors v1.4.0
