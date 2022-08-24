@@ -3,8 +3,6 @@ package routes
 import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	swaggerfiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
 	controller "mageBATestCase/controller/v1"
 	"mageBATestCase/docs"
 	"mageBATestCase/middleware"
@@ -18,11 +16,12 @@ func InitRoute() *gin.Engine {
 	router := gin.New()
 	router.Use(gin.Logger()) //I can use middleware.Logger()
 	router.Use(cors.Default())
+	router.Use(middleware.CORSMiddleware())
 	router.Use(gin.Recovery())
 	router.Use(middleware.ErrorHandler)
 	router.NoRoute(noRouteHandler())
 	router.SetTrustedProxies(nil)
-	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
+	//router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 	setAuthRoute(router)
 	return router
 }
@@ -44,13 +43,13 @@ func setAuthRoute(router *gin.Engine) {
 func noRouteHandler() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		responseModel := dto.ApiResponse{
-			Status:    "404",
+			Status:    "501",
 			TimeStamp: time.Now().Format("2006/01/02 15:04:05"),
 			Result: gin.H{
 				"endpoint": c.Request.URL.String(),
 				"method":   c.Request.Method,
 				"hint":     "You entered an invalid Page/Endpoint, visit http://localhost:8080/swagger/index.html to see the available routes",
 			}}
-		c.JSON(http.StatusNotFound, responseModel)
+		c.JSON(http.StatusNotImplemented, responseModel)
 	}
 }
