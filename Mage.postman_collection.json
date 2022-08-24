@@ -24,12 +24,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9090/api/v1/user/register",
+					"raw": "http://localhost:5050/api/v1/user/register",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9090",
+					"port": "5050",
 					"path": [
 						"api",
 						"v1",
@@ -54,12 +54,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/api/v1/user/register",
+							"raw": "http://localhost:5050/api/v1/user/register",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9090",
+							"port": "5050",
 							"path": [
 								"api",
 								"v1",
@@ -115,12 +115,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9090/api/v1/user/login",
+					"raw": "http://localhost:5050/api/v1/user/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9090",
+					"port": "5050",
 					"path": [
 						"api",
 						"v1",
@@ -152,12 +152,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/api/v1/user/login",
+							"raw": "http://localhost:5050/api/v1/user/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9090",
+							"port": "5050",
 							"path": [
 								"api",
 								"v1",
@@ -212,12 +212,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9090/api/v1/endgame",
+					"raw": "http://localhost:5050/api/v1/endgame",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9090",
+					"port": "5050",
 					"path": [
 						"api",
 						"v1",
@@ -247,12 +247,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/api/v1/endgame",
+							"raw": "http://localhost:5050/api/v1/endgame",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9090",
+							"port": "5050",
 							"path": [
 								"api",
 								"v1",
@@ -309,12 +309,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9090/api/v1/leaderboard",
+					"raw": "http://localhost:5050/api/v1/leaderboard",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9090",
+					"port": "5050",
 					"path": [
 						"api",
 						"v1",
@@ -344,12 +344,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/api/v1/leaderboard",
+							"raw": "http://localhost:5050/api/v1/leaderboard",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9090",
+							"port": "5050",
 							"path": [
 								"api",
 								"v1",

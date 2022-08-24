@@ -11,11 +11,11 @@ go mod init github.com/zgrgrcn/mageBATestCase
 ```bash
 go run main.go
 ```
-Default port is 9090
+Default port is 5050
 
 # Swagger Documentation
 ## Swagger UI
-http://localhost:9090/swagger/index.html
+http://localhost:5050/swagger/index.html
 
 ## Generate Swagger Documentation (Needs to install swag, Docs are already exist)
 ```bash

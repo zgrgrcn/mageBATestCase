@@ -14,7 +14,7 @@ import (
 // @contact.name Ozgur Gurcan
 // @contact.email zgurgurcan1996@gmail.com
 
-// @host      localhost:9090
+// @host      localhost:5050
 // @BasePath  /api/v1
 
 // @securityDefinitions.apikey bearerAuth
@@ -22,7 +22,7 @@ import (
 // @name Authorization
 func main() {
 	docs.SwaggerInfo.Version = "1.0"
-	docs.SwaggerInfo.Host = "localhost:9090"
+	docs.SwaggerInfo.Host = "localhost:5050"
 	docs.SwaggerInfo.BasePath = "/api/v1"
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	docs.SwaggerInfo.Title = "Mage BA Test Case API"

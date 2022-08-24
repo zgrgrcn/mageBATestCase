@@ -31,7 +31,7 @@ definitions:
     - score
     - userID
     type: object
-host: localhost:9090
+host: localhost:5050
 info:
   contact:
     email: zgurgurcan1996@gmail.com

@@ -9,7 +9,7 @@
         },
         "version": "1.0"
     },
-    "host": "localhost:9090",
+    "host": "localhost:5050",
     "basePath": "/api/v1",
     "paths": {
         "/endgame": {
