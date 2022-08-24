@@ -34,12 +34,12 @@ The default port is 8080 go to http://localhost:8080/swagger/index.html or https
 #### For /user endpoint you don't need to add any token, but for /leaderboard and /endgame endpoints you need to add a token to the header as Bearer. You can get token from /user/login endpoint.
 
 ### Code Coverage
-Also, there are 25 test in the code. Current coverage rate is 87.9% of statements.
+Also, there are 25 test in the code. Current coverage rate is 87.9% of the statements.
 ![Code Coverage Image](images/code%20coverage.png)
 
 
 ## ONLINE TEST
-All APIs  are online(thanks to GitHub CI/CD) and you can test them with swagger ui or postman collection.
+All APIs  are online(thanks to GitHub CI/CD and Heroku) and you can test them with swagger ui or postman collection.
 https://shielded-springs-54397.herokuapp.com/swagger/index.html (it is a free tier, so don't be surprised if it is slow)
 #### For /user endpoint you don't need to add any token, but for /leaderboard and /endgame endpoints you need to add a token to the header as Bearer. You can get token from /user/login endpoint.
 
