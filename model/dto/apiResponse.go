@@ -1,4 +1,4 @@
-package entity
+package dto
 
 // - status (string): İşlem sonuç durumu. success
 // - timestamp (string): İşlem zaman bilgisi

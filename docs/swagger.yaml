@@ -1,0 +1,172 @@
+basePath: /api/v1
+definitions:
+  dto.ApiResponse:
+    properties:
+      result: {}
+      status:
+        type: string
+      timeStamp:
+        type: string
+    type: object
+  dto.Response:
+    properties:
+      error:
+        type: string
+    type: object
+  dto.UserRequest:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  entity.Player:
+    properties:
+      score:
+        minimum: 0
+        type: integer
+      userID:
+        type: string
+    required:
+    - score
+    - userID
+    type: object
+host: localhost:9090
+info:
+  contact:
+    email: zgurgurcan1996@gmail.com
+    name: Ozgur Gurcan
+  description: 'This is a test case for Mage BA position.Created by Ozgur Gurcan.
+    phone number: +90 539 946 17 08'
+  title: Mage BA Test Case API
+  version: "1.0"
+paths:
+  /endgame:
+    post:
+      description: record the end of the game as core and return the leaderboard
+      operationId: Endgame
+      parameters:
+      - description: user_id and score List of the users
+        in: body
+        name: PlayerRequest
+        required: true
+        schema:
+          items:
+            $ref: '#/definitions/entity.Player'
+          type: array
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.ApiResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/dto.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/dto.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/dto.Response'
+      security:
+      - bearerAuth: []
+      summary: record the end of the game as score
+      tags:
+      - endgame
+  /leaderboard:
+    get:
+      description: Get Leaderboard with username and score
+      operationId: Leaderboard
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.ApiResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/dto.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/dto.Response'
+      security:
+      - bearerAuth: []
+      summary: Get Leaderboard
+      tags:
+      - leaderboard
+  /user/login:
+    post:
+      description: Login a new user with username and password and return a token
+      operationId: Login
+      parameters:
+      - description: username and password
+        in: body
+        name: UserRequest
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.ApiResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/dto.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/dto.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/dto.Response'
+      summary: Login a user
+      tags:
+      - user
+  /user/register:
+    post:
+      description: register a new user with username and password
+      operationId: Register
+      parameters:
+      - description: username and password
+        in: body
+        name: UserRequest
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.ApiResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/dto.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/dto.Response'
+      summary: register a new user
+      tags:
+      - user
+securityDefinitions:
+  bearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
