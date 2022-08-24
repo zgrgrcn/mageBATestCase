@@ -15,7 +15,7 @@ var ctx context.Context = nil
 
 func GetConnection() (*mongo.Client, context.Context) {
 	if client == nil {
-		client, err := mongo.NewClient(options.Client().ApplyURI(util.GetEnvVariable("ATLAS_URI")))
+		client, err := mongo.NewClient(options.Client().ApplyURI(util.GetEnvVariable("DATABASE_URL")))
 		if err != nil {
 			log.Fatal(err)
 		}
