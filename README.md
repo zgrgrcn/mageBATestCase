@@ -35,6 +35,7 @@ The default port is 8080 go to http://localhost:8080/swagger/index.html or https
 
 ### Code Coverage
 Also, there are 25 test in the code. Current coverage rate is 87.9% of the statements.
+
 ![Code Coverage Image](images/code%20coverage.png)
 
 
