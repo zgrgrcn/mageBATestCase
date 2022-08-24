@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "17871640-7ac6-42b6-9c3a-444b3545f752",
+		"name": "Mage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18479456"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"test5\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test5\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Aug 2022 00:42:00 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "197"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Status\": \"200\",\n    \"TimeStamp\": \"2022/08/24 03:42:00\",\n    \"Result\": {\n        \"ID\": \"630573d8e211c258c40a65c1\",\n        \"Username\": \"test5\",\n        \"Password\": \"$2a$04$ANq.KlSVe0NpXuVk8TxjoODQUddqI6UB2rFPllPNhHAIFT1PbxHtG\",\n        \"Token\": \"\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRlc3QxIn0.MNaHc27oo7BNw4mF3j4kuWQnInCfP_Ld-PRYkIP0tEo",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"test5\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRlc3QxIn0.MNaHc27oo7BNw4mF3j4kuWQnInCfP_Ld-PRYkIP0tEo",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test5\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Aug 2022 01:24:24 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "305"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Status\": \"200\",\n    \"TimeStamp\": \"2022/08/24 04:24:24\",\n    \"Result\": {\n        \"ID\": \"630573d8e211c258c40a65c1\",\n        \"Username\": \"test5\",\n        \"Password\": \"$2a$04$ANq.KlSVe0NpXuVk8TxjoODQUddqI6UB2rFPllPNhHAIFT1PbxHtG\",\n        \"Token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRlc3Q1In0.bpmdCq3WMaXS0z4Gg1iA4Inhp3uDP9gw7N0B9Da6_U4\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "endgame",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRlc3QxIn0.MNaHc27oo7BNw4mF3j4kuWQnInCfP_Ld-PRYkIP0tEo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"UserID\": \"63050093f0fb611425eb8741\",\r\n        \"score\": 1\r\n    },\r\n    {\r\n        \"UserID\": \"63050093f0fb611425eb8741\",\r\n        \"score\": 5\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/endgame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"endgame"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "endgame",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRlc3QxIn0.MNaHc27oo7BNw4mF3j4kuWQnInCfP_Ld-PRYkIP0tEo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"UserID\": \"63050093f0fb611425eb8741\",\r\n        \"score\": 1\r\n    },\r\n    {\r\n        \"UserID\": \"63050093f0fb611425eb8741\",\r\n        \"score\": 5\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/endgame",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"endgame"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Aug 2022 01:03:04 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Status\": \"200\",\n    \"TimeStamp\": \"2022/08/24 04:03:04\",\n    \"Result\": [\n        {\n            \"UserID\": \"630500bdf0fb611425eb8745\",\n            \"Score\": 75\n        },\n        {\n            \"UserID\": \"630500c5f0fb611425eb8747\",\n            \"Score\": 7\n        },\n        {\n            \"UserID\": \"63050093f0fb611425eb8741\",\n            \"Score\": -273\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "leaderboard",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRlc3QxIn0.MNaHc27oo7BNw4mF3j4kuWQnInCfP_Ld-PRYkIP0tEo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/leaderboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"leaderboard"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "leaderboard",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRlc3QxIn0.MNaHc27oo7BNw4mF3j4kuWQnInCfP_Ld-PRYkIP0tEo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/leaderboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"leaderboard"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Aug 2022 01:11:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Status\": \"200\",\n    \"TimeStamp\": \"2022/08/24 04:11:12\",\n    \"Result\": [\n        {\n            \"UserID\": \"630500bdf0fb611425eb8745\",\n            \"Score\": 75\n        },\n        {\n            \"UserID\": \"630500c5f0fb611425eb8747\",\n            \"Score\": 7\n        },\n        {\n            \"UserID\": \"63050093f0fb611425eb8741\",\n            \"Score\": -273\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
