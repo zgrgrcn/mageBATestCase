@@ -41,7 +41,7 @@ func Authentication() gin.HandlerFunc {
 		}
 		if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
 			username := claims["Username"].(string)
-			userservice := service.Userservice{}
+			userservice := service.UserService{}
 			user, err := userservice.FindByUserName(username) //TODO: need userservice.FindByUserName
 			if err != nil {
 				c.AbortWithStatusJSON(http.StatusNotFound, dto.Response{

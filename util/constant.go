@@ -1,7 +1,7 @@
 package util
 
-const PATH_USER = "/user"
-const PATH_REGISTER = "/register"
-const PATH_LOGIN = "/login"
-const PATH_ENDGAME = "/endgame"
-const PATH_LEADERBOARD = "/leaderboard"
+const PathUser = "/user"
+const PathRegister = "/register"
+const PathLogin = "/login"
+const PathEndgame = "/endgame"
+const PathLeaderboard = "/leaderboard"

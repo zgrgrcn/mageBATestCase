@@ -30,14 +30,14 @@ func InitRoute() *gin.Engine {
 func setAuthRoute(router *gin.Engine) {
 	v1 := router.Group(docs.SwaggerInfo.BasePath)
 
-	v1.POST(util.PATH_USER+util.PATH_REGISTER, new(controller.UserController).Register)
-	v1.POST(util.PATH_USER+util.PATH_LOGIN, new(controller.UserController).Login)
+	v1.POST(util.PathUser+util.PathRegister, new(controller.UserController).Register)
+	v1.POST(util.PathUser+util.PathLogin, new(controller.UserController).Login)
 
 	authGroup := router.Group(util.GetEnvVariable("BASE_PATH"))
 	authGroup.Use(middleware.Authentication())
 	//authGroup.GET("/profile", userController.Endgame)
-	authGroup.POST(util.PATH_ENDGAME, new(controller.EndGameController).Endgame)
-	authGroup.GET(util.PATH_LEADERBOARD, new(controller.LeaderBoardController).Leaderboard)
+	authGroup.POST(util.PathEndgame, new(controller.EndGameController).Endgame)
+	authGroup.GET(util.PathLeaderboard, new(controller.LeaderBoardController).Leaderboard)
 
 }
 

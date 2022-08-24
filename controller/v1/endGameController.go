@@ -28,22 +28,26 @@ type EndGameController struct{}
 func (controller *EndGameController) Endgame(c *gin.Context) {
 	_, isTokenExist := c.Get("user")
 	if !isTokenExist {
-		c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "Please login first"})
+		c.AbortWithStatusJSON(http.StatusUnauthorized, dto.Response{Message: "Please login first"})
 		return
 	}
 
 	var playerList []entity.Player
 	if err := c.ShouldBindJSON(&playerList); err != nil {
-		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		c.AbortWithStatusJSON(http.StatusBadRequest, dto.Response{Message: err.Error()})
 		return
 	}
 	leaderboardService := service.LeaderboardService{}
 	err := leaderboardService.ValidateUserList(playerList)
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		c.JSON(http.StatusBadRequest, dto.Response{Message: err.Error()})
 		return
 	}
-	leaderboardService.PutResults(playerList)
+	err = leaderboardService.PutResults(playerList)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, dto.Response{Message: err.Error()})
+		return
+	}
 	var leaderBoardList, _ = leaderboardService.FindAll()
 	c.JSON(http.StatusOK, dto.ApiResponse{
 		Status:    "200",

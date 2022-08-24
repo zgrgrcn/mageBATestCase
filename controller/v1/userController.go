@@ -33,7 +33,7 @@ func (controller *UserController) Register(c *gin.Context) {
 		})
 		return
 	}
-	dbUser, err := service.Userservice{}.Create(&userRequest)
+	dbUser, err := service.UserService{}.Create(&userRequest)
 	if err != nil {
 		c.AbortWithStatusJSON(http.StatusInternalServerError, dto.Response{Message: err.Error()})
 	} else {
@@ -72,7 +72,7 @@ func (controller *UserController) Login(c *gin.Context) {
 			return
 		}
 	}
-	userservice := service.Userservice{}
+	userservice := service.UserService{}
 	dbUser, err := userservice.Find(&loginInfo)
 	if err != nil {
 		c.AbortWithStatusJSON(http.StatusNotFound, dto.Response{Message: err.Error()})

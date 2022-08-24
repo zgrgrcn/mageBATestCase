@@ -15,7 +15,7 @@ type User struct {
 
 func (user *User) GetJwtToken() (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"Username": string(user.Username),
+		"Username": user.Username,
 	})
 	secretKey := util.GetEnvVariable("TOKEN_KEY")
 	tokenString, err := token.SignedString([]byte(secretKey))
