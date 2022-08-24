@@ -271,7 +271,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "https://shielded-springs-54397.herokuapp.com/",
+	Host:             "shielded-springs-54397.herokuapp.com",
 	BasePath:         "/api/v1",
 	Schemes:          []string{},
 	Title:            "Mage BA Test Case API",
