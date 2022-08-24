@@ -28,7 +28,8 @@ func TestRegister_userAlreadyExistsERROR(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.Response
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
 
 	userAlreadyExistsMessage := "write exception: write errors: [E11000 duplicate key error collection: mage.user index: username_1 dup key: { username: \"test\" }]"
 	assert.Equal(http.StatusBadRequest, w.Code, "Status Code should be 400")
@@ -50,7 +51,8 @@ func TestRegister_badRequestERROR(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.Response
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
 
 	badRequestMessage := "Please input all fields"
 	assert.Equal(http.StatusBadRequest, w.Code, "Status Code should be 400")
@@ -72,7 +74,8 @@ func TestRegister_SUCCESS(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.ApiResponse
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
 
 	assert.Equal(http.StatusOK, w.Code, "Status Code should be 200")
 	assert.Equal("200", realResponse.Status, "In response object status code should be 200")
@@ -96,7 +99,8 @@ func TestLogin_wrongPasswordERROR(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.Response
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
 
 	wrongPasswordMessage := "password is not correct"
 	assert.Equal(http.StatusUnauthorized, w.Code, "Status Code should be 401")
@@ -118,7 +122,8 @@ func TestLogin_userNotExistERROR(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.Response
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
 
 	userNotExistMessage := "there is no users with the same username"
 	assert.Equal(http.StatusUnauthorized, w.Code, "Status Code should be 401")
@@ -136,7 +141,8 @@ func TestLogin_badRequestERROR(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.Response
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
 
 	badRequesttMessage := "invalid request"
 	assert.Equal(http.StatusBadRequest, w.Code, "Status Code should be 400")
@@ -158,7 +164,8 @@ func TestLogin_SUCCESS(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.ApiResponse
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
 
 	assert.Equal(http.StatusOK, w.Code, "Status Code should be 200")
 	assert.Equal("200", realResponse.Status, "In response object status code should be 200")

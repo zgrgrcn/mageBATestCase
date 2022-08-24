@@ -11,6 +11,7 @@ import (
 )
 
 func TestNoRouteHandler(t *testing.T) {
+	assert := assert.New(t)
 	r := gin.Default()
 	r.GET("/", noRouteHandler())
 	req, _ := http.NewRequest("GET", "/", nil)
@@ -18,8 +19,9 @@ func TestNoRouteHandler(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.ApiResponse
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
-	assert := assert.New(t)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
+
 	assert.Equal(http.StatusNotImplemented, w.Code, "Status code should be 501")
 	assert.Equal("501", realResponse.Status, "In response object status code should be 501")
 	assert.NotEmpty(realResponse.TimeStamp, "TimeStamp should not be empty")
@@ -27,14 +29,16 @@ func TestNoRouteHandler(t *testing.T) {
 }
 
 func TestInitRoute(t *testing.T) {
+	assert := assert.New(t)
 	r := InitRoute()
 	req, _ := http.NewRequest("GET", "/", nil)
 	w := httptest.NewRecorder()
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.ApiResponse
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
-	assert := assert.New(t)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
+
 	assert.Equal(http.StatusNotImplemented, w.Code, "Status code should be 501")
 	assert.Equal("501", realResponse.Status, "In response object status code should be 501")
 	assert.NotEmpty(realResponse.TimeStamp, "TimeStamp should not be empty")

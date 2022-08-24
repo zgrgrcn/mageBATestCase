@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"github.com/gin-gonic/gin"
-	_ "github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 	"mageBATestCase/middleware"
 	"mageBATestCase/model/dto"
@@ -27,7 +26,8 @@ func TestEndGame_userUnauthorizedERROR(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.Response
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
 
 	userUnauthorizedMessage := "Please login first"
 	assert.Equal(http.StatusUnauthorized, w.Code, "Status Code should be 401")
@@ -47,7 +47,8 @@ func TestEndGame_wrongTokenERROR(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.Response
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
 
 	wrongJWTMessage := "invalid character 'Î' looking for beginning of value"
 	assert.Equal(http.StatusUnauthorized, w.Code, "Status Code should be 401")
@@ -67,7 +68,8 @@ func TestEndGame_invalidTokenERROR(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.Response
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
 
 	invalidTokenMessage := "Invalid token"
 	assert.Equal(http.StatusBadRequest, w.Code, "Status Code should be 401")
@@ -88,7 +90,8 @@ func TestEndGame_badRequestFormatERROR(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.Response
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
 
 	badRequestFormatMessage := "json: cannot unmarshal string into Go value of type []entity.Player"
 	assert.Equal(http.StatusBadRequest, w.Code, "Status Code should be 400")
@@ -119,7 +122,8 @@ func TestEndGame_notExistUserERROR(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.Response
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
 
 	invalidUserIdMessage := "`user_id` is not valid or missing, error: the provided hex string is not a valid ObjectID"
 	assert.Equal(http.StatusBadRequest, w.Code, "Status Code should be 400")
@@ -147,7 +151,8 @@ func TestEndGame_SUCCESS(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	var realResponse dto.ApiResponse
-	json.Unmarshal(w.Body.Bytes(), &realResponse)
+	err := json.Unmarshal(w.Body.Bytes(), &realResponse)
+	assert.Nil(err, "Error should be nil")
 
 	assert.Equal(http.StatusOK, w.Code, "Status Code should be 200")
 	assert.Equal("200", realResponse.Status, "In response object status code should be 200")
