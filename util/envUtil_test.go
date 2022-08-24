@@ -21,7 +21,7 @@ func TestATLAS_URI(t *testing.T) {
 }
 func TestSERVER_PORT(t *testing.T) {
 	val := GetEnvVariable("PORT")
-	if val != ":5050" {
+	if val != ":8080" {
 		t.Error("Expected PORT but got ", val)
 	}
 }
