@@ -18,7 +18,7 @@ func InitRoute() *gin.Engine {
 	router := gin.New()
 	router.Use(gin.Logger()) //I can use middleware.Logger()
 	router.Use(cors.Default())
-	router.Use(middleware.CORSMiddleware())
+	//router.Use(middleware.CORSMiddleware())
 	router.Use(gin.Recovery())
 	router.Use(middleware.ErrorHandler)
 	router.NoRoute(noRouteHandler())

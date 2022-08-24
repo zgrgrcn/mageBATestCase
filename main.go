@@ -12,9 +12,9 @@ import (
 
 // @license MIT
 // @contact.name Ozgur Gurcan
-// @contact.email zgurgurcan1996@gmail.com
+// @contact.email ozgurgurcan1996@gmail.com
 
-// @host      shielded-springs-54397.herokuapp.com
+// @host      localhost:808
 // @BasePath  /api/v1
 
 // @securityDefinitions.apikey bearerAuth
@@ -22,7 +22,7 @@ import (
 // @name Authorization
 func main() {
 	docs.SwaggerInfo.Version = "1.0"
-	docs.SwaggerInfo.Host = "shielded-springs-54397.herokuapp.com"
+	docs.SwaggerInfo.Host = "localhost:8080"
 	docs.SwaggerInfo.BasePath = "/api/v1"
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	docs.SwaggerInfo.Title = "Mage BA Test Case API"
